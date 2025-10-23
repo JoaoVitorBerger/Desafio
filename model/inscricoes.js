@@ -1,10 +1,10 @@
 const Inscricao = {
     criar(aluno, curso){
-        if(curso.alunosIncritos.includes(aluno.registroAcademico)){
-            console.log("Aluno já inscrito nesse curso.")
+        const inscricao = {
+            aluno: aluno,
+            curso: curso,
+            dataInscricao: new Date()
         }
-        curso.alunosIncritos.push(aluno.registroAcademico)
-        aluno.cursosInscritos.push(curso.codigoCurso)
-        console.log("Aluno inscrito no curso com sucesso.")
+        return inscricao
     }
 }
