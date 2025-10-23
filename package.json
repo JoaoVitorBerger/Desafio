@@ -1,0 +1,17 @@
+{
+  "name": "companyconferi",
+  "version": "1.0.0",
+  "description": "Desafio Company Conferi",
+  "main": "index.js",
+  "author": "Joao Vitor Berger",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mysql2": "^3.15.3",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
