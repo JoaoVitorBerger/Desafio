@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Pesquisar Alunos inscritos em cursos</h1>
+  <input type="text" id="registroAluno" placeholder="Digite o registro do aluno">
+  <button onclick="buscarAlunos()">Buscar Curso</button>
+  <div id="listaCursos"></div>
+  <a href="/">Home</a>
+  <script>
+    async function buscarAlunos() {
+      const registro = document.getElementById('registroAluno').value;
+      const res = await fetch(`/inscricao/curso/${registro}`);
+      let alunos = await res.json();
+      if (alunos.length !== 0) {
+        alunos.forEach(aluno => {
+          let component = document.createElement('li')
+          component.innerText = aluno.nome
+          document.getElementById('listaCursos').append(component)
+        });
+      } else {
+        document.getElementById('listaCursos').innerHTML = `
+        <h3>Nenhum Aluno Cadastrado no curso até o momento</h3>`
+      }
+
+    }
+  </script>
+
+</body>
+
+</html>
